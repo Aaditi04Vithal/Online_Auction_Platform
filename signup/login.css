@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,500;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark:#1d69a3;
+    --padding-inline-section: 20px;
+}
+
+
+body{
+    font-family: 'Poppins',sans-serif;
+    color: var(--primary-text-color);
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p{
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+    line-height: 1.8rem;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* Custom styles for the navbar */
+.navbar-custom {
+    background-color: #800020; 
+    border-bottom: 2px solid #d4af37; 
+}
+
+.navbar-custom .navbar-brand {
+    color:#f0e6d2;
+    font-family: 'Merriweather', serif; 
+    font-weight: bold;
+    font-size: 30px;
+}
+.navbar-custom .navbar-brand:hover {
+    color: #d4af37;
+}
+
+
+.navbar-custom .nav-link {
+    color: #f0e6d2; 
+    font-family: 'Merriweather', serif;
+    text-transform: none; 
+    letter-spacing: 0px; 
+}
+
+.navbar-custom .nav-link:hover {
+    color: #d4af37; 
+    background-color: rgba(212, 175, 55, 0.1); 
+    border-radius: 5px;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-color: #f0e6d2; 
+}
+
+.navbar-custom {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar-brand img {
+    width: 120px;
+}
+
+.form{
+    background-color: beige;
+    border:5px solid #FFD700;
+    margin-top: 40vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
+.login-body{
+    background-color: #4A0000;
+}
+#heading{
+    color: brown;
+}
+body, html {
+    height: 100%;  /* Ensure the body takes full height */
+    margin: 0;     /* Remove default margin */
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically *//
+}
+
+.form {
+    width: 100%;         /* Full width within limits */
+    max-width: 600px;    /* Optional: limits the width of the form */
+    padding: 30px;       /* Padding inside the form */
+    background-color: beige; /* White background for the form */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for depth */
+}
+
+#submit{
+   background-color: #B5A642;
+   border-radius: 3px;
+}

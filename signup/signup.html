@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Bids</title>
+  <link rel="stylesheet" href="./signup.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .is-valid {
+      border-color: #198754;
+    }
+    .is-invalid {
+      border-color: #dc3545;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="sign-body">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TreasureBids</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../auctions/auctions.html">Auctions</a></li>
+          <li class="nav-item"><a class="nav-link" href="../magazine/magazine.html">Magazine</a></li>
+          <li class="nav-item"><a class="nav-link" href="../sell&buy/sell_buy.html">Sell & Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="../signup/signup.html">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="../support/support.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="form">
+    <h2 align="center">Sign Up</h2>
+    <form id="form-id">
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="First name" name="FirstName" required>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Last name" name="LastName" required>
+      </div>
+      <div><label for="mobile">Enter Mobile number </label><br>
+        <input type="number" name="mobileNo" id="mobile" required minlength="10" style="min-width: 360px; max-width: 600px;">
+        <br><br>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="passwordInput" class="form-label">Password</label>
+        <div id="passwordHelpBlock" class="form-text">
+          <input type="password" id="passwordInput" minlength="8" name="password" style="max-width: 550px;min-width: 360px;" required>
+          <button type="button" id="togglePassword" style="margin-left: 5px;">👁️</button><br>
+          <p>Your password must be 8-20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.</p>
+          <p id="passwordStrength" style="font-weight: bold; color: grey;"></p>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username">
+      </div>
+      <label>Fields Of Interests:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="art">
+        <label class="form-check-label" for="inlineCheckbox1">Art</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="antiques">
+        <label class="form-check-label" for="inlineCheckbox2">Antiques</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="collectibles">
+        <label class="form-check-label" for="inlineCheckbox3">Collectibles</label>
+      </div>
+      <br><br>
+      <label>Gender:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="other">
+        <label class="form-check-label" for="inlineRadio3">Other</label>
+      </div>
+      <br><br>
+      <label>Auction Role:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="role" id="inlineRadio1role1" value="buyer">
+        <label class="form-check-label" for="inlineRadio1role1">Buyer</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="role" id="inlineRadio2role2" value="seller">
+        <label class="form-check-label" for="inlineRadio2role2">Seller</label>
+      </div>
+      <br><br>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="termsCheckbox" required data-bs-toggle="tooltip"
+          data-bs-placement="right"
+          title="By checking this box, you agree to the Terms and Conditions of our online auction platform.">
+        <label class="form-check-label" for="termsCheckbox">
+          I agree to the Terms and Conditions
+        </label>
+      </div><br>
+
+      <a href="login.html">Already have an Account? Log in</a><br>
+      <div class="d-grid mt-3">
+        <input type="submit" value="Sign Up" class="btn btn-success" id="signupButton" disabled>
+      </div>
+    </form>
+  </main>
+
+  <footer style="text-align: center; padding: 10px; background-color: #4A0000; color: beige; font-size: 14px;">&copy;
+    2024 TreasureBids. All rights reserved.</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const termsCheckbox = document.getElementById('termsCheckbox');
+      const signupButton = document.getElementById('signupButton');
+      const passwordInput = document.getElementById('passwordInput');
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordStrength = document.getElementById('passwordStrength');
+      const signupElement = document.getElementById("form-id");
+
+      // Disable the submit button by default
+      signupButton.disabled = true;
+
+      // Event listener for the checkbox to enable/disable the submit button
+      termsCheckbox.addEventListener('change', function () {
+        if (termsCheckbox.checked) {
+          signupButton.disabled = false; // Enable the submit button if checked
+        } else {
+          signupButton.disabled = true; // Disable if unchecked
+        }
+      });
+
+      // Password strength check
+      passwordInput.addEventListener('input', function () {
+        const password = passwordInput.value;
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+        if (password.length >= 8) {
+          if (regex.test(password)) {
+            passwordStrength.textContent = "Strong password!";
+            passwordStrength.style.color = "green";
+          } else {
+            passwordStrength.textContent = "Password should contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
+            passwordStrength.style.color = "red";
+          }
+        } else {
+          passwordStrength.textContent = "Password too short (minimum 8 characters).";
+          passwordStrength.style.color = "red";
+        }
+      });
+
+      // Show/hide password
+      togglePassword.addEventListener('click', function () {
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+      });
+
+      // Form submission handler
+      signupElement.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(signupElement);
+        const user = {
+          firstName: formData.get('FirstName'),
+          lastName: formData.get('LastName'),
+          mobileNo: formData.get('mobileNo'),
+          email: formData.get('email'),
+          password: formData.get('password'),
+          username: formData.get('username'),
+          interests: [],
+          gender: formData.get('gender'),
+          roles: []
+        };
+
+        // Handling checkboxes for interests and roles
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+          if (checkbox.value === 'art' || checkbox.value === 'antiques' || checkbox.value === 'collectibles') {
+            user.interests.push(checkbox.value);
+          } else if (checkbox.value === 'buyer' || checkbox.value === 'seller') {
+            user.roles.push(checkbox.value);
+          }
+        });
+
+        // Save the user data to localStorage (use 'email' as unique key)
+        localStorage.setItem(user.email, JSON.stringify(user));
+
+        alert(`Registration successful! Welcome, ${user.username}`);
+        window.location.href = "../index/index.html";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yreasure Bids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #4A0000; }
+    .form-container { max-width: 500px; margin: 50px auto; padding: 20px; background: beige; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); border: 5px solid #B5A642; }
+    h2 { text-align: center; font-family: 'Old Standard TT', sans-serif;font-size: 44px; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    .btn { background: #B08D57; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%; }
+    .btn:hover { background: #B5A642; }
+    .item-preview { text-align: center; margin-bottom: 20px; }
+    .item-preview img { max-width: 300px; height: auto; border-radius: 10px; }
+    .item-preview p { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Place Your Bid</h2>
+    <div class="item-preview">
+      <img id="itemImage" src="" alt="Item">
+      <p>Current Highest Bid: <span id="currentBid"></span></p>
+    </div>
+    <form id="bidForm">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="bidAmount">Bid Amount:</label>
+        <input type="number" id="bidAmount" required>
+      </div>
+      <button type="submit" class="btn">Submit Bid</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const itemData = JSON.parse(localStorage.getItem("selectedItem"));
+      document.getElementById("itemImage").src = itemData.image;
+      document.getElementById("currentBid").textContent = itemData.highestBid;
+
+      document.getElementById("bidForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const bidAmount = parseInt(document.getElementById("bidAmount").value);
+        const currentBid = parseInt(itemData.highestBid.replace(/[^\d.-]/g, ''));
+
+        if (bidAmount <= currentBid) {
+          alert("Your bid must be higher than the current highest bid!");
+        } else {
+          alert(`Thank you, ${firstName}! Your bid of ₹${bidAmount} has been placed.`);
+          localStorage.setItem("placedBid", JSON.stringify({ firstName, lastName, bidAmount, image: itemData.image }));
+          window.location.href = "thankyou.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

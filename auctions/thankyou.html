@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Bids</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #4A0000; text-align: center; padding: 50px; }
+    .container { background: bisque; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); border: 5px solid #B5A642; }
+    h2 { color: #28a745; }
+    .item-image { max-width: 300px; border-radius: 10px; margin: 20px 0; }
+    p { font-size: 18px; margin-bottom: 20px; }
+    .btn { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 16px; display: inline-block; }
+    .btn:hover { background: #0056b3; }
+
+    @media (max-width: 768px) {
+      .container { padding: 15px; }
+      .item-image { max-width: 90%; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: 100%; padding: 10px; }
+      h2 { font-size: 18px; }
+      .item-image { max-width: 100%; }
+      .btn { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Thank You!</h2>
+    <img id="itemImage" class="item-image" src="" alt="Item">
+    <p id="message"></p>
+    <a href="./auctions.html" class="btn">Back to Auction</a> <!-- Button to redirect back to auction -->
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bidData = JSON.parse(localStorage.getItem("placedBid"));
+      document.getElementById("itemImage").src = bidData.image;
+      document.getElementById("message").textContent = `Dear ${bidData.firstName}, thank you for placing a bid of ₹${bidData.bidAmount}.`;
+    });
+  </script>
+</body>
+</html>
